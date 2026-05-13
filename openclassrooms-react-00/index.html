@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to React</title>
+</head>
+<body>
+    <div id="root">Root!</div>
+    <div id="fruits">Fruits</div>
+
+    <!-- React and Babel -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Creating React Components... -->
+    <script type="text/babel">
+
+        // React Components
+        const Header = () => {
+            return <h1>Welcome to React!</h1>
+        }
+        //const Description = React.createElement('p', {}, 'This is a hands-on lab practice of React');
+        function Description(){
+            return (<p>This is a hands-on lab practice of React</p>);
+        }
+        function FruitsList() {
+            const fruits = ["Mango", "Banana", "Orange", "Pineapple"];
+
+            return (
+                <React.Fragment>
+                <h2>My Favorite Fruits</h2>
+                    <ul className="list-disc pl-6">
+                        {fruits.map((fruit) => (
+                        <li key={fruit} className="text-lg py-1">
+                            {fruit}
+                        </li>
+                        ))}
+                    </ul>
+                </React.Fragment>
+            );
+        }
+
+        // Render
+        ReactDOM.render(
+            <React.Fragment><Header /><Description /></React.Fragment>,
+            document.getElementById("root")
+        );
+        ReactDOM.render(
+            <FruitsList />,
+            document.getElementById('fruits')
+        );
+    </script>
+
+    <!-- Checking... -->
+    <script>
+        console.log(React);
+        
+    </script>
+</body>
+</html>
+
