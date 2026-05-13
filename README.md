@@ -9,4 +9,9 @@ Hands-On Learning for Nexius App
 - And make it RENDER!
 
 ## PART 2: Create React App
-Using Yarn instead of npm
+npx create-react-app appName <br>
+Using npm
+Props
+Children Props
+PropTypes
+Events...

@@ -1,0 +1,24 @@
+.nx-banner {
+	color: black;
+	text-align: right;
+	/* padding: 32px; */
+	border-bottom: solid 3px rgb(2, 74, 68);
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: row;
+	align-items: center;
+    /* background-color: chocolate; */
+}
+
+.nx-title {
+	padding-left: 0px;
+    padding-right: 10px;
+    font-family: sk-concretica;
+    /* background-color: brown; */
+}
+
+.nx-logo {
+	height: 45px;
+	width: 45px;
+    /* background-color: blue; */
+}
