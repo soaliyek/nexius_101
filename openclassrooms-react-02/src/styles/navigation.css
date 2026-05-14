@@ -27,6 +27,7 @@
 }
 .nx-navigation span:hover{
     background-color: #008374;
+    border-bottom: 2px solid #fff;
 }
 
 .nx-navigation span a{

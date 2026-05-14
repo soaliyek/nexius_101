@@ -13,5 +13,9 @@ npx create-react-app appName <br>
 Using npm
 Props
 Children Props
-PropTypes
-Events...
+PropTypes...
+Events listening
+Uncontrolled Forms
+Controlled Forms
+useState()
+useEffect()
