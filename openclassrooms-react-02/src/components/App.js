@@ -5,19 +5,18 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hey there!</h1>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {/* Form 1 */}
+        <form onSubmit={handleSubmit}>
+          <input type='text' name="my_input" placeholder="Enter text..." />
+          <button type='submit'>Submit</button>
+        </form>
       </header>
     </div>
   );
+}
+
+function handleSubmit(){
+
 }
 
 export default App;
