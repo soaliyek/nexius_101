@@ -7,6 +7,7 @@ import TasksList from './components/TasksList';
 import TaskProp from './components/TaskProp';
 import logo from "./assets/nexius_logo.png"
 import TaskCardConatiner from './components/TaskCardContainer';
+import QuestionForm from './components/QuestionForm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
     {/* <TasksList /> */}
     <TaskCardConatiner />
     <App />
+    < QuestionForm />
   </React.StrictMode>
 );
 
