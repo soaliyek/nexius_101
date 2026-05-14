@@ -1,0 +1,36 @@
+
+.nx-navigation-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #006a62;
+}
+
+.nx-navigation-container button{
+    background-color: #5b561a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.nx-navigation{
+    display: flex;
+    gap: 20px;
+}
+
+.nx-navigation span{
+    cursor: pointer;
+    background-color: #004d40;
+    padding: 5px 10px;
+}
+.nx-navigation span:hover{
+    background-color: #008374;
+}
+
+.nx-navigation span a{
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}

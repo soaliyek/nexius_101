@@ -8,6 +8,7 @@ import TaskProp from './components/TaskProp';
 import logo from "./assets/nexius_logo.png"
 import TaskCardConatiner from './components/TaskCardContainer';
 import QuestionForm from './components/QuestionForm';
+import Navigation from './components/Navigation';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
     <TaskCardConatiner />
     <App />
     < QuestionForm />
+    <Navigation />
   </React.StrictMode>
 );
 
