@@ -2,15 +2,23 @@ import "../styles/taskCard.css"
 
 function TaskCard({id, title, category, budget}){
     return (
-        <div className="nx-task-card">
+        <div className="nx-task-card" onClick={() => handleClick({id})}>
             <h3 className="nx-task-card-id">{id}</h3>
-            <div className="nx-task-card-details">
+            <div className="nx-task-card-details" onClick={handleDetailsClick}>
                 <p>Title: {title}</p>
                 <p>Category: {category}</p>
                 <p>GHC {budget}</p>
             </div>
         </div>
     );
+}
+
+function handleClick({id}){
+    alert(`Task card with ID: ${id} is clicked!`);
+}
+
+function handleDetailsClick(e){
+    console.log("Details Click Happened: ", e);
 }
 
 export default TaskCard;
