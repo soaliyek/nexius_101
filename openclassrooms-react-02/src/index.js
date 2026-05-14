@@ -6,6 +6,7 @@ import Banner from './components/Banner';
 import TasksList from './components/TasksList';
 import TaskProp from './components/TaskProp';
 import logo from "./assets/nexius_logo.png"
+import TaskCardConatiner from './components/TaskCardContainer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,8 +15,8 @@ root.render(
       <img src={logo} alt="Nexius" className="nx-logo" />
       <h1 className="nx-title">nexius</h1>
     </Banner>
-    <TasksList />
-    <TaskProp name="Budget" value="GHC 150" />
+    {/* <TasksList /> */}
+    <TaskCardConatiner />
     <App />
   </React.StrictMode>
 );
