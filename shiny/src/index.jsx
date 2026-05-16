@@ -4,20 +4,25 @@ import './index.css';
 import Home from './pages/Home/index.jsx';
 import reportWebVitals from './reportWebVitals';
 
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Survey from './pages/Survey/index';
+import Header from './components/Header/index';
+import Error from './components/Error/index';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
+      <Header />
+
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/survey" element={<Survey />} />
+        <Route path="/survey/:questionNumber" element={<Survey />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </Router>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function
