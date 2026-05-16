@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Survey from './pages/Survey/index';
 import Header from './components/Header/index';
 import Error from './components/Error/index';
+import Freelancers from './pages/Freelancers/index';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/freelancers" element={<Freelancers />} />
         <Route path="/survey/:questionNumber" element={<Survey />} />
         <Route path="*" element={<Error />} />
       </Routes>
