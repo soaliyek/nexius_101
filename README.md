@@ -19,3 +19,8 @@ Uncontrolled Forms
 Controlled Forms
 useState()
 useEffect()
+
+# INTERMEDIATE REACT (OPENCLASSROOMS COURSE)
+Buidling Shiny
+
+## PART 1: Architecture
