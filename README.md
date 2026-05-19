@@ -31,3 +31,4 @@ Buidling Shiny
 File Structure: https://legacy.reactjs.org/docs/faq-structure.html
 React Router: https://v5.reactrouter.com/web/guides/quick-start
 
+Next: CSS with scopes
