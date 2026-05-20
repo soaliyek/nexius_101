@@ -7,7 +7,6 @@ const CardContainer = styled.div`
   flex-direction: column;
   padding: 15px;
   gap: 10px;
-  background-color: #ae1616;
 `;
 
 const CardLabel = styled.span`
@@ -22,9 +21,9 @@ const CardTitle = styled.span`
 `;
 
 const CardImage = styled.img`
-height: 80px;
-width: 80px;
-border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
 `
 
 function Card({ label, title, picture }) {
