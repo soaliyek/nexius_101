@@ -11,7 +11,7 @@ const CardContainer = styled.div`
 
 const CardLabel = styled.span`
   font-size: 22px;
-  color: #1c0b8d;
+  color: #5843E4;
   font-weight: bold;
 `;
 

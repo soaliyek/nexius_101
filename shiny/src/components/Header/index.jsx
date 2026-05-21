@@ -26,7 +26,7 @@ const StyledNav = styled.nav`
 `;
 
 const StyledLink = styled(Link)`
-  color: #5843E4;
+  color: #8186a0;
   height: 100%;
   padding: 0 15px;
   text-decoration: none;
