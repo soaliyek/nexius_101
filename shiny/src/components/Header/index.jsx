@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import colors from '../../utils/style/colors';
 
 /*
 const HeaderContainer = styled.header`
@@ -36,7 +37,7 @@ const StyledLink = styled(Link)`
     background-color: #d1d3d2;
   }
   ${(props) => props.$isFullLink && `
-    background-color: #5843E4;
+    background-color: ${colors.primary};
     border-radius: 30px;
     color: #fff;
   `}
