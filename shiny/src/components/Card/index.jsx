@@ -1,12 +1,20 @@
 import PropTypes from 'prop-types';
 import DefaultPicture from '../../assets/profile.png';
 import styled from 'styled-components';
+import colors from '../../utils/style/colors';
 
-const CardContainer = styled.div`
+const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px;
-  gap: 10px;
+  background-color: ${colors.backgroundLight};
+  border-radius: 30px;
+  width: 350px;
+  trasition: 200ms;
+  &:hover{
+    cursor: pointer;
+    box-shadow: 2px 2px 10px #1e32a3;
+  }
 `;
 
 const CardLabel = styled.span`
@@ -17,7 +25,7 @@ const CardLabel = styled.span`
 
 const CardTitle = styled.span`
   font-size: 18px;
-  color: #fff;
+  color: #976262;
 `;
 
 const CardImage = styled.img`
@@ -28,11 +36,11 @@ const CardImage = styled.img`
 
 function Card({ label, title, picture }) {
   return (
-    <CardContainer>
+    <CardWrapper>
       <CardLabel> {label} </CardLabel>
       <CardImage src={picture} alt="freelancer" />
       <CardTitle> {title} </CardTitle>
-    </CardContainer>
+    </CardWrapper>
   );
 }
 
