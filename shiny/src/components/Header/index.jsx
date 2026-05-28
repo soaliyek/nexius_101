@@ -20,10 +20,10 @@ const StyledNav = styled.nav`
   justify-content: flex-end;
   padding-right: 20px;
   gap: 20px;
-  height: 30px;
+  height: 50px;
   background-color: #d1d3d2;
-  padding: 5px 15px;
-  align-items: center;
+  // padding: 5px 15px;
+  // align-items: center;
 `;
 
 const StyledLink = styled(Link)`
@@ -32,11 +32,14 @@ const StyledLink = styled(Link)`
   padding: 0 15px;
   text-decoration: none;
   font-size: 18px;
+  background-color: #0e9954;
   &:hover {
     color: #fff;
     background-color: #d1d3d2;
   }
-  ${(props) => props.$isFullLink && `
+  ${(props) =>
+    props.$isFullLink &&
+    `
     background-color: ${colors.primary};
     border-radius: 30px;
     color: #fff;
@@ -49,7 +52,9 @@ function Header() {
       <StyledNav>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/freelancers">Freelancers</StyledLink>
-        <StyledLink to="/survey/1" $isFullLink>Survey</StyledLink>
+        <StyledLink to="/survey/1" $isFullLink>
+          Survey
+        </StyledLink>
       </StyledNav>
     </HeaderContainer>
   );
