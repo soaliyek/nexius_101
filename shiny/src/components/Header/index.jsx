@@ -1,29 +1,21 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import colors from '../../utils/style/colors';
-
-/*
-const HeaderContainer = styled.header`
-  background-color: #1c0b8d;
-  height: 60px;
-  display: flex;
-  align-items: center;
-`;
-*/
-
-const HeaderContainer = styled.header`
-  background-color: #d1d3d2;
-`;
+import logo from '../../assets/nexius_logo_long.png';
 
 const StyledNav = styled.nav`
   display: flex;
-  justify-content: flex-end;
-  padding-right: 20px;
-  gap: 20px;
-  height: 50px;
+  justify-content: space-between;
+  padding: 10px;
   background-color: #d1d3d2;
-  // padding: 5px 15px;
-  // align-items: center;
+  align-items: center;
+`;
+
+const LinkContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  height: 40px;
 `;
 
 const StyledLink = styled(Link)`
@@ -32,7 +24,9 @@ const StyledLink = styled(Link)`
   padding: 0 15px;
   text-decoration: none;
   font-size: 18px;
-  background-color: #0e9954;
+  //background-color: #0e9954;
+  display: flex;
+  align-items: center;
   &:hover {
     color: #fff;
     background-color: #d1d3d2;
@@ -48,15 +42,17 @@ const StyledLink = styled(Link)`
 
 function Header() {
   return (
-    <HeaderContainer>
       <StyledNav>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/freelancers">Freelancers</StyledLink>
-        <StyledLink to="/survey/1" $isFullLink>
-          Survey
-        </StyledLink>
+        <Link to="/">
+          <img src={logo} alt="Shiny Logo" style={{ height: '40px' }} />
+        </Link>
+
+        <LinkContainer>
+          <StyledLink to="/">Home</StyledLink>
+          <StyledLink to="/freelancers">Freelancers</StyledLink>
+          <StyledLink to="/survey/1" $isFullLink>Survey</StyledLink>
+        </LinkContainer>
       </StyledNav>
-    </HeaderContainer>
   );
 }
 
