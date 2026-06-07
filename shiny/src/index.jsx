@@ -10,30 +10,32 @@ import Survey from './pages/Survey/index';
 import Header from './components/Header/index';
 import Error from './components/Error/index';
 import Freelancers from './pages/Freelancers/index';
+import GlobalStyle from './utils/style/GlobalStyle.jsx';
 
-import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-  div{
-    font-family: 'Trebuchet MS', Helvetica, sans-serif;
-    }
-`;
+import Footer from './components/Footer/index.jsx';
+import { ThemeProvider } from './utils/context/index';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-      <GlobalStyle />
-      <Header />
+      <ThemeProvider>
+        <GlobalStyle />
+        <Header />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/freelancers" element={<Freelancers />} />
-        <Route path="/survey/:questionNumber" element={<Survey />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/freelancers" element={<Freelancers />} />
+          <Route path="/survey/:questionNumber" element={<Survey />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+
+        <Footer />
+      </ThemeProvider>
     </Router>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
