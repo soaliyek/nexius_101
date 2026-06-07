@@ -6,20 +6,20 @@ import colors from '../../utils/style/colors';
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 15px;
   background-color: ${colors.backgroundLight};
   border-radius: 30px;
-  width: 350px;
   trasition: 200ms;
   &:hover{
     cursor: pointer;
-    box-shadow: 2px 2px 10px #1e32a3;
+    box-shadow: 2px 2px 10px ${colors.secondary};
   }
 `;
 
 const CardLabel = styled.span`
   font-size: 22px;
-  color: #5843E4;
+  color: ${colors.primary};
   font-weight: bold;
 `;
 
