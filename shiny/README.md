@@ -1,3 +1,13 @@
+# SHINY APP
+
+## Data API
+Once launched, this API provides you with several routes:
+- The route to retrieve freelance profiles: GET /freelancers
+- The route to get the details of a freelance profile: GET /profile/?id={id}
+- The route to get the questionnaire: GET /survey/
+- The route to get the result of the questionnaire: GET /results/?a1={answer1}&a2={answer2}&a3={answer3}...<br>
+Improve with Rest APIs [HERE]("https://openclassrooms.com/fr/courses/6573181-adoptez-les-api-rest-pour-vos-projets-web")
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
