@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import colors from '../../utils/style/colors';
 import { Loader } from '../../utils/Atoms';
 import { SurveyContext } from '../../utils/context';
+import { useFetch } from '../../utils/hooks';
 
 
 const SurveyContainer = styled.div`
@@ -58,19 +59,13 @@ const ReplyWrapper = styled.div`
 `
 
 function Survey() {
+  // Get the question number from the URL parameters
   const { questionNumber } = useParams();
   const questionNum = parseInt(questionNumber);
 
-  // Loader
-  const [isDataLoading, setIsDataLoading] = useState(false);
-
-  // To store the API response data
-  const [surveyData, setSurveyData] = useState({});
   // Keep track of previous and next questions
   const prevQuestionNum = questionNum === 1 ? 1 : questionNum - 1;
   const nextQuestionNum = questionNum === 10 ? 10 : questionNum + 1;
-  // For errors
-  const [error, setError] = useState(null);
 
   // Survey Context
   const { answers, saveAnswers } = useContext(SurveyContext);
@@ -78,58 +73,31 @@ function Survey() {
     saveAnswers({ [questionNumber]: answer })
   }
 
-  // Fetch survey data when component mounts
-  // using fetch api to get data from the API endpoint and store it in state
-  /*
-  useEffect(() => {
-    setIsDataLoading(true);
-    fetch(`http://localhost:8000/survey`)
-      .then(response => response.json()
-        .then(({ surveyData }) => {
-          setSurveyData(surveyData);
-          setIsDataLoading(false);
-        })
-        .catch((error) => {
-          console.log("nexius@EError:" + error);
-          setIsDataLoading(false);
-        })
-      )
-  }, [])
-  */
+  // Fetch the survey data using our custom useFetch hook
+  const { data, isLoading, error } = useFetch(`http://localhost:8000/survey`);
 
-  // Fetch survey data using async/await syntax
-  // Get the data and store it the say way: in a state variable
-  useEffect(() => {
-    const fetchSurveyData = async () => {
-      setIsDataLoading(true);
-
-      try {
-        const response = await fetch(`http://localhost:8000/survey`);
-        const data = await response.json();
-        setSurveyData(data.surveyData);
-        setIsDataLoading(false);
-      } catch (error) {
-        setError(error);
-        console.log("nexius@EError:" + error);
-        setIsDataLoading(false);
-      } finally {
-        setIsDataLoading(false);
-      }
-    }
-
-    fetchSurveyData();
-  }, [])
+  if(error) {
+    return (
+      <SurveyContainer>
+        <h1>Survey Page</h1>
+        <QuestionTitle>Question {questionNum}</QuestionTitle>
+        <QuestionContent>
+          Oups, something went wrong. Please try again later.
+        </QuestionContent>
+      </SurveyContainer>
+    )
+  }
 
   return (
     <SurveyContainer>
       <h1>Survey Page</h1>
       <QuestionTitle>Question {questionNum}</QuestionTitle>
-      {isDataLoading ? 
+      {isLoading ? 
         (
           <Loader />
         ) : (
           <QuestionContent>
-            {surveyData[questionNum]}
+            {data[questionNum]}
           </QuestionContent>
         )
       }
@@ -154,7 +122,7 @@ function Survey() {
           <Link to={`/survey/${prevQuestionNum}`}>Previous</Link>
         </span>
 
-        {surveyData[questionNum + 1] ? (
+        {data[questionNum + 1] ? (
           <span>
             <Link to={`/survey/${nextQuestionNum}`}>Next</Link>
           </span>
