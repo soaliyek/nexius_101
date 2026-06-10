@@ -8,6 +8,9 @@ Once launched, this API provides you with several routes:
 - The route to get the result of the questionnaire: GET /results/?a1={answer1}&a2={answer2}&a3={answer3}...<br>
 Improve with Rest APIs [HERE]("https://openclassrooms.com/fr/courses/6573181-adoptez-les-api-rest-pour-vos-projets-web")
 
+## Custom Hooks
+Custom Hooks for API querries or [React Query](https://react-query.tanstack.com/) as a more robust alternative.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

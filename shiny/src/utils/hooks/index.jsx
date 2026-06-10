@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { ThemeContext } from '../context';
 
 function consoleLogError(error) {
     console.error('nexius@EFetch:', error);
@@ -37,7 +38,13 @@ export function useFetch(url) {
         fetchData()
     }, [url])
 
-    // Finally, we return the data and the loading state 
+    // Finally, we return the data, loading state and any error
     // so that the component that uses this hook can access them.
-    return { data, isLoading }
+    return { data, isLoading, error }
+}
+
+export function useTheme(){
+    const { theme, toggleTheme } = useContext(ThemeContext)
+
+    return { theme, toggleTheme }
 }

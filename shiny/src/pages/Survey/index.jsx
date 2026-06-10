@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {useState, useEffect, useContext} from 'react';
 import styled from 'styled-components';
 import colors from '../../utils/style/colors';
-import { Loader } from '../../utils/Atoms';
+import { Loader } from '../../utils/style/Atoms';
 import { SurveyContext } from '../../utils/context';
 import { useFetch } from '../../utils/hooks';
 
@@ -75,6 +75,7 @@ function Survey() {
 
   // Fetch the survey data using our custom useFetch hook
   const { data, isLoading, error } = useFetch(`http://localhost:8000/survey`);
+  const surveyData = data?.surveyData || {};
 
   if(error) {
     return (
@@ -92,15 +93,13 @@ function Survey() {
     <SurveyContainer>
       <h1>Survey Page</h1>
       <QuestionTitle>Question {questionNum}</QuestionTitle>
-      {isLoading ? 
-        (
-          <Loader />
-        ) : (
-          <QuestionContent>
-            {data[questionNum]}
-          </QuestionContent>
-        )
-      }
+      {isLoading ? (
+        <Loader />
+      ) : Object.keys(surveyData).length === 0 ? (
+        <QuestionContent>Oups, no survey data available.</QuestionContent>
+      ) : (
+        <QuestionContent>{surveyData[questionNum]}</QuestionContent>
+      )}
       
       <ReplyWrapper>
         <ReplyBox
@@ -122,7 +121,7 @@ function Survey() {
           <Link to={`/survey/${prevQuestionNum}`}>Previous</Link>
         </span>
 
-        {data[questionNum + 1] ? (
+        {surveyData[questionNum + 1] ? (
           <span>
             <Link to={`/survey/${nextQuestionNum}`}>Next</Link>
           </span>

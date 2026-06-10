@@ -2,7 +2,7 @@ import DefaultPicture from '../../assets/profile.png';
 import Card from '../../components/Card';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
-import { Loader } from '../../utils/Atoms';
+import { Loader } from '../../utils/style/Atoms';
 
 const FreelancersContainer = styled.div`
   display: flex;
