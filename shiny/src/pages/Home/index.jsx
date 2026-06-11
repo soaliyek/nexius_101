@@ -16,14 +16,22 @@ const Balloon = styled.div`
   transform: scale(${props => props.size});
 `;
 
+export function getSum(a, b){
+  return a + b;
+}
+
 function Home() {
   const [size, setSize] = useState(1);
+
+
   return (
     <HomeContainer>
       <h1 onClick={() => setSize(size + 0.1)}>Welcome to Shiny!</h1>
       <Balloon size={size} />
+      <h2>{ getSum(2000, 26) }</h2>
     </HomeContainer>
   );
 }
+
 
 export default Home;

@@ -11,6 +11,11 @@ Improve with Rest APIs [HERE]("https://openclassrooms.com/fr/courses/6573181-ado
 ## Custom Hooks
 Custom Hooks for API querries or [React Query](https://react-query.tanstack.com/) as a more robust alternative.
 
+## Testing
+- Unit Testing (using Jest & React Testing Library) for scripts like functions
+- End-to-End Testing for testing complete features (big functions)
+- Integration Testing for simulating user interaction with the software
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
