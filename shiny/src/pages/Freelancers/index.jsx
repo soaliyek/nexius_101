@@ -22,31 +22,13 @@ const CardContainer = styled.div`
   width: 80%;
 `;
 
-const freelancerProfiles = [
-  {
-    name: 'John Doe',
-    jobTitle: 'Devops',
-    picture: DefaultPicture,
-  },
-  {
-    name: 'Jane Doe',
-    jobTitle: 'Frontend Developer',
-    picture: DefaultPicture,
-  },
-  {
-    name: 'Jack Doe',
-    jobTitle: 'Backend Developer',
-    picture: DefaultPicture,
-  },
-];
-
 function Freelancers() {
   const [freelancerData, setFreelancerData] = useState([]);
   const [isProfilesLoading, setIsProfilesLoading] = useState(false);
 
   useEffect(() => {
     setIsProfilesLoading(true);
-    fetch(`http://localhost:8000/freelancers`).then((response) =>
+    fetch(`http://10.10.28.62:8000/freelancers`).then((response) =>
       response
         .json()
         .then((data) => {
