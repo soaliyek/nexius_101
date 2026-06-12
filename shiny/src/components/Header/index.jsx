@@ -42,17 +42,19 @@ const StyledLink = styled(Link)`
 
 function Header() {
   return (
-      <StyledNav>
-        <Link to="/">
-          <img src={logo} alt="Shiny Logo" style={{ height: '40px' }} />
-        </Link>
+    <StyledNav>
+      <Link to="/">
+        <img src={logo} alt="Shiny Logo" style={{ height: '40px' }} />
+      </Link>
 
-        <LinkContainer>
-          <StyledLink to="/">Home</StyledLink>
-          <StyledLink to="/freelancers">Freelancers</StyledLink>
-          <StyledLink to="/survey/1" $isFullLink>Survey</StyledLink>
-        </LinkContainer>
-      </StyledNav>
+      <LinkContainer>
+        <StyledLink to="/">Home</StyledLink>
+        <StyledLink to="/freelancers">Freelancers</StyledLink>
+        <StyledLink to="/survey/1" $isFullLink>
+          Survey
+        </StyledLink>
+      </LinkContainer>
+    </StyledNav>
   );
 }
 

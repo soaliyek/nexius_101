@@ -46,39 +46,38 @@ function Freelancers() {
 
   useEffect(() => {
     setIsProfilesLoading(true);
-    fetch(`http://localhost:8000/freelances`)
-      .then(response => response.json()
+    fetch(`http://localhost:8000/freelancers`).then((response) =>
+      response
+        .json()
         .then((data) => {
           setFreelancerData(data.freelancersList);
           setIsProfilesLoading(false);
-          console.log("nexius@FreelancersData:", data.freelancersList);
+          console.log('nexius@FreelancersData:', data.freelancersList);
         })
         .catch((error) => {
-          console.log("nexius@EError:" + error);
+          console.log('nexius@EError:' + error);
           setIsProfilesLoading(false);
-        })
-      )
+        }),
+    );
   }, []);
 
   return (
     <FreelancersContainer>
       <h1>Freelancers</h1>
-      {isProfilesLoading ? 
-        (
-          <Loader/>
-        ):(
-          <CardContainer>
-            {freelancerData.map((profile, index) => (
-              <Card
-                key={index}
-                label={profile.name}
-                title={profile.job}
-                picture={profile.picture}
-              />
-            ))}
-          </CardContainer>
-        )
-      }
+      {isProfilesLoading ? (
+        <Loader />
+      ) : (
+        <CardContainer>
+          {freelancerData.map((profile, index) => (
+            <Card
+              key={index}
+              label={profile.name}
+              title={profile.job}
+              picture={profile.picture}
+            />
+          ))}
+        </CardContainer>
+      )}
     </FreelancersContainer>
   );
 }

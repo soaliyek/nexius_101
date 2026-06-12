@@ -11,7 +11,7 @@ const CardWrapper = styled.div`
   background-color: ${colors.backgroundLight};
   border-radius: 30px;
   trasition: 200ms;
-  &:hover{
+  &:hover {
     cursor: pointer;
     box-shadow: 2px 2px 10px ${colors.secondary};
   }
@@ -32,7 +32,7 @@ const CardImage = styled.img`
   height: 80px;
   width: 80px;
   border-radius: 50%;
-`
+`;
 
 function Card({ label, title, picture }) {
   return (
@@ -53,7 +53,7 @@ Card.propTypes = {
 Card.defaultProps = {
   label: 'Default Label',
   title: 'Default Title',
-  picture: DefaultPicture
+  picture: DefaultPicture,
 };
 
 export default Card;

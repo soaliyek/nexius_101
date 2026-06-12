@@ -1,12 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import {useState, useEffect, useContext} from 'react';
+import { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import colors from '../../utils/style/colors';
 import { Loader } from '../../utils/style/Atoms';
 import { SurveyContext } from '../../utils/context';
 import { useFetch } from '../../utils/hooks';
-
 
 const SurveyContainer = styled.div`
   display: flex;
@@ -21,7 +20,7 @@ const QuestionTitle = styled.h2`
 
 const QuestionContent = styled.span`
   margin: 30px;
-`
+`;
 
 const LinkWrapper = styled.div`
   padding-top: 30px;
@@ -51,12 +50,12 @@ const ReplyBox = styled.button`
   &:last-of-type {
     margin-left: 15px;
   }
-`
+`;
 
 const ReplyWrapper = styled.div`
   display: flex;
   flex-direction: row;
-`
+`;
 
 function Survey() {
   // Get the question number from the URL parameters
@@ -70,14 +69,14 @@ function Survey() {
   // Survey Context
   const { answers, saveAnswers } = useContext(SurveyContext);
   function saveReply(answer) {
-    saveAnswers({ [questionNumber]: answer })
+    saveAnswers({ [questionNumber]: answer });
   }
 
   // Fetch the survey data using our custom useFetch hook
   const { data, isLoading, error } = useFetch(`http://localhost:8000/survey`);
   const surveyData = data?.surveyData || {};
 
-  if(error) {
+  if (error) {
     return (
       <SurveyContainer>
         <h1>Survey Page</h1>
@@ -86,7 +85,7 @@ function Survey() {
           Oups, something went wrong. Please try again later.
         </QuestionContent>
       </SurveyContainer>
-    )
+    );
   }
 
   return (
@@ -100,7 +99,7 @@ function Survey() {
       ) : (
         <QuestionContent>{surveyData[questionNum]}</QuestionContent>
       )}
-      
+
       <ReplyWrapper>
         <ReplyBox
           onClick={() => saveReply(true)}
